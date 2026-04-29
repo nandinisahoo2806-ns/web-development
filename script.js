@@ -1,43 +1,22 @@
-const form = document.getElementById("eventForm");
-const eventList = document.getElementById("eventList");
+function addBlog() {
+  let title = document.getElementById("title").value;
+  let content = document.getElementById("content").value;
 
-let events = [];
+  if(title=="" || content==""){
+    alert("Fill all fields");
+    return;
+  }
 
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
+  let div = document.createElement("div");
+  div.className = "blog";
 
-    const name = document.getElementById("name").value;
-    const date = document.getElementById("date").value;
-    const time = document.getElementById("time").value;
-    const location = document.getElementById("location").value;
+  div.innerHTML = `
+    <h3>${title}</h3>
+    <p>${content}</p>
+  `;
 
-    const event = {
-        name,
-        date,
-        time,
-        location
-    };
+  document.getElementById("blogList").appendChild(div);
 
-    events.push(event);
-    displayEvents();
-
-    form.reset();
-});
-
-function displayEvents() {
-    eventList.innerHTML = "";
-
-    events.forEach((event, index) => {
-        const div = document.createElement("div");
-        div.classList.add("event-card");
-
-        div.innerHTML = `
-            <h3>${event.name}</h3>
-            <p><strong>Date:</strong> ${event.date}</p>
-            <p><strong>Time:</strong> ${event.time}</p>
-            <p><strong>Location:</strong> ${event.location}</p>
-        `;
-
-        eventList.appendChild(div);
-    });
+  document.getElementById("title").value = "";
+  document.getElementById("content").value = "";
 }

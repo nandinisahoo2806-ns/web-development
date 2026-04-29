@@ -1,38 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EventLiteZ</title>
-    <link rel="stylesheet" href="style.css">
+  <title>BlogSphere</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>EVENTLITEZ</h1>
-        <p class="description">
-            EventLiteZ is a beginner-friendly project aimed at developing a simple yet functional event listing website.
-        </p>
+  <h1>BlogSphere ✍️</h1>
 
-        <!-- Event Form -->
-        <div class="form-section">
-            <h2>Create Event</h2>
-            <form id="eventForm">
-                <input type="text" id="name" placeholder="Event Name" required>
-                <input type="date" id="date" required>
-                <input type="time" id="time" required>
-                <input type="text" id="location" placeholder="Location" required>
-                <button type="submit">Add Event</button>
-            </form>
-        </div>
+  <input type="text" id="title" placeholder="Blog Title"><br><br>
+  <textarea id="content" placeholder="Write your blog..."></textarea><br><br>
 
-        <!-- Event List -->
-        <div class="list-section">
-            <h2>Upcoming Events</h2>
-            <div id="eventList"></div>
-        </div>
-    </div>
+  <button onclick="addBlog()">Post Blog</button>
 
-    <script src="script.js"></script>
+  <h2>All Blogs</h2>
+  <div id="blogList"></div>
+
+  <script src="script.js"></script>
+
 </body>
 </html>
